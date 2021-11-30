@@ -1,0 +1,126 @@
+﻿<Window x:Class="Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Calculator" Height="440" Width="300"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Background="Transparent" AllowsTransparency="True">
+
+    <Border CornerRadius="5"
+            BorderBrush="Black"
+            BorderThickness="2">
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF074A48" Offset="0.005"/>
+                <GradientStop Color="#FF06BFBB" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.08*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button Content="x" Style="{StaticResource ExitButtonTheme}"
+                    Click="bExit_Click"/>
+            
+            <Border Grid.Row="1"
+                    CornerRadius="10" Margin="5"
+                    BorderBrush="White" BorderThickness="1">
+                
+                <StackPanel Margin="5">
+                    
+                    <TextBlock FontSize="18" Foreground="#27A7D7"
+                               x:Name="textResult"
+                               Margin="0 0 0 5"/>
+
+                    <TextBox x:Name="tboxExample"/>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="2" Margin="5">
+
+                <Grid Margin="5" VerticalAlignment="Bottom">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="1">
+                        <Button Content="+" Click="bActPlus_Click"
+                                Style="{StaticResource ActionButtonTheme}"/>
+                        <Button Content="-" Click="bActMinus_Click"
+                                Style="{StaticResource ActionButtonTheme}"/>
+                        <Button Content="*" Click="bActMultiply_Click"
+                                Style="{StaticResource ActionButtonTheme}"/>
+                        <Button Content="/" Click="bActDivide_Click"
+                                Style="{StaticResource ActionButtonTheme}"/>
+                        <TextBlock Text="Calculator&#x0a;By LetY0udown"
+                                   FontSize="10" Margin="0 30 0 0"/>
+                    </StackPanel>
+
+                    <StackPanel HorizontalAlignment="Center">
+
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center">
+                            <Button Content="(" Click="bActOpenBracket_Click"
+                                    Style="{StaticResource ActionButtonTheme}"/>
+                            <Button Content=")" Click="bActCloseBracket_Click"
+                                    Style="{StaticResource ActionButtonTheme}"/>
+                            <Button Content="^" Click="bActInPower_Click"
+                                    Style="{StaticResource ActionButtonTheme}"/>
+                        </StackPanel>
+                        
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center">
+                            <Button Content="1" Click="bNumOne_Click"
+                                    Style="{StaticResource NumberButtonTheme}"/>
+                            <Button Content="2" Click="bNumTwo_Click"
+                                    Style="{StaticResource NumberButtonTheme}"/>
+                            <Button Content="3" Click="bNumThree_Click"
+                                    Style="{StaticResource NumberButtonTheme}"/>
+                        </StackPanel>
+                        
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center">
+                            <Button Content="4" Click="bNumFour_Click"
+                                    Style="{StaticResource NumberButtonTheme}"/>
+                            <Button Content="5" Click="bNumFive_Click"
+                                    Style="{StaticResource NumberButtonTheme}"/>
+                            <Button Content="6" Click="bNumSix_Click"
+                                    Style="{StaticResource NumberButtonTheme}"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center">
+                            <Button Content="7" Click="bNumSeven_Click"
+                                    Style="{StaticResource NumberButtonTheme}"/>
+                            <Button Content="8" Click="bNumEight_Click"
+                                    Style="{StaticResource NumberButtonTheme}"/>
+                            <Button Content="9" Click="bNumNine_Click"
+                                    Style="{StaticResource NumberButtonTheme}"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center">
+                            <Button Content="." Click="bActPoint_Click"
+                                    Style="{StaticResource ActionButtonTheme}"/>
+                            <Button Content="0" Click="bNumZero_Click"
+                                    Style="{StaticResource NumberButtonTheme}"/>
+                            <Button Content="=" Click="bEquals_Click"
+                                    Style="{StaticResource ActionButtonTheme}"/>
+                        </StackPanel>
+                    </StackPanel>
+                    
+                </Grid>
+                
+            </Border>
+        </Grid>
+    </Border>
+</Window>
